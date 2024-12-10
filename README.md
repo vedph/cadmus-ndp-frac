@@ -7,33 +7,11 @@ In what follows:
 - ⭐ marks a new part. The star is used once, even when that part is then reused in other items. If a part marked with a star has a link to documentation, this means that I have already implemented it as I could do this in advance for generic parts. All the other parts are still to be implemented.
 - ⚠️ marks an area where the model must still be defined with a discussion.
 
-## Item - Fragment
+This diagram summarizes the parts planned for this project, grouped by their package:
 
-```puml
-@startmindmap
-* fragment
-** general
-*** metadata
-*** historical events
-*** note:history
-*** links
-*** ext bibliography
-*** decorated counts
-*** physical measurements
-*** chronotopes
-*** physical states
-** codicology
-*** contents?
-*** hands
-*** edits
-*** shelfmarks
-** NEW
-*** fragment support
-*** quire labels
-*** decorations
-*** rulings
-@endmindmap
-```
+![parts](docs/img/parts.png)
+
+## Item - Fragment
 
 This item represents a single fragment.
 
