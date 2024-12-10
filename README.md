@@ -9,26 +9,30 @@ In what follows:
 
 ## Item - Fragment
 
-```mermaid
-mindmap
-  root((fragment))
-    metadata
-    COD shelfmarks
-    chronotopes
-    historical events
-    note:history
-    links
-    ext bibliography
-    COD contents?
-    COD hands
-    COD edits
-    decorated counts
-    physical measurements
-    fragment dsc
-    quire labels
-    physical states
-    decorations?
-    rulings
+```puml
+@startmindmap
+* fragment
+** general
+*** metadata
+*** historical events
+*** note:history
+*** links
+*** ext bibliography
+*** decorated counts
+*** physical measurements
+*** chronotopes
+*** physical states
+** codicology
+*** contents?
+*** hands
+*** edits
+*** shelfmarks
+** NEW
+*** fragment support
+*** quire labels
+*** decorations
+*** rulings
+@endmindmap
 ```
 
 This item represents a single fragment.
@@ -47,7 +51,7 @@ This item represents a single fragment.
 - 📖 [codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
 - ⭐ [decorated counts part](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)
 - ⭐ [physical measurements part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md)
-- ⭐ fragment description part:
+- ⭐ fragment support part:
   - `material` (string, thesaurus)
   - `state` (string, thesaurus: ottimo, buono, discreto, precario, pessimo)
   - grids brick for position in layout: select one and enter coords (1 or more) for it
@@ -63,7 +67,7 @@ This item represents a single fragment.
   - `hand` (string; lookup?)
   - `ink` (free text string)
   - `note` (free text)
-- ⭐ [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
+- [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
 - ⭐ decorations part:
   - to be defined... ⚠️
 - ⭐ rulings part (`CodFrRulings[]`):
