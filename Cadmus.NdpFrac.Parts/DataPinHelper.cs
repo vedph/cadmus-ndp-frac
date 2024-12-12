@@ -1,6 +1,6 @@
 ﻿using Cadmus.Core;
 
-namespace Cadmus.Frac.Parts;
+namespace Cadmus.NdpFrac.Parts;
 
 static internal class DataPinHelper
 {

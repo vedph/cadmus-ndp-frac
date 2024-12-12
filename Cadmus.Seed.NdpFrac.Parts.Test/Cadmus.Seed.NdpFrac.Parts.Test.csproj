@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Cadmus.Seed.Frac.Parts\Cadmus.Seed.Frac.Parts.csproj" />
+	  <ProjectReference Include="..\Cadmus.Seed.NdpFrac.Parts\Cadmus.Seed.NdpFrac.Parts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

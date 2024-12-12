@@ -20,7 +20,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Cadmus.Frac.Parts\Cadmus.Frac.Parts.csproj" />
+	  <ProjectReference Include="..\Cadmus.NdpFrac.Parts\Cadmus.NdpFrac.Parts.csproj" />
 	</ItemGroup>
 
 </Project>
