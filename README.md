@@ -68,7 +68,7 @@ This formula targets size and mirror (D. Bianconi, P. Orsini). The formula alway
    2. unit, e.g. `mm`
    3. `H [H] x W [W]`, where `H` and/or `W` can be wrapped in `()` (current dimensions not corresponding to the original ones). Each can be followed by another dimension in `[]` which is the reconstructed dimension. If a dimension is missing, it is replaced by `-` (here we use a dash rather than an EM dash for better accessibility); from a practical point of view, this `-` is thus equal to `0`.
 2. `=` followed by horizontal ruling spans. Each measurement number here can be wrapped in `()` and followed by another measurement in `[]` as above (1.2).
-3. `x` followed by vertical ruling spans, as above (2).
+3. `x` (or `×` U+00D7) followed by vertical ruling spans, as above (2).
 
 For 2-3 each measurement can be separated by:
 
