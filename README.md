@@ -60,6 +60,63 @@ This item represents a single fragment.
   - 🟢 fr quire labels part:`catch`: quire labels for catchwords.
   - ⭐ decorations part: ⚠️ to be defined
 
+### Formula
+
+This formula targets size and mirror (D. Bianconi, P. Orsini). The formula always targets a _recto_ page used as the sample. All the elements are separated by whitespace:
+
+1. size:
+   2. unit, e.g. `mm`
+   3. `H [H] x W [W]`, where `H` and/or `W` can be wrapped in `()` (current dimensions not corresponding to the original ones). Each can be followed by another dimension in `[]` which is the reconstructed dimension. If a dimension is missing, it is replaced by `-` (here we use a dash rather than an EM dash for better accessibility); from a practical point of view, this `-` is thus equal to `0`.
+2. `=` followed by horizontal ruling spans. Each measurement number here can be wrapped in `()` and followed by another measurement in `[]` as above (1.2).
+3. `x` followed by vertical ruling spans, as above (2).
+
+For 2-3 each measurement can be separated by:
+
+- `/` for single ruled areas (=this marks the start of a new area);
+- `//` for the writing mirror (=this occurs in pairs, delimiting the writing mirror).
+
+Examples (see pp.110-111):
+
+(1) `mm (57) [175] x (145) [150] = (22) // (35) [115] // - x 10 // 115 // (20)`
+
+- `mm`: unit
+- `(57) [175]`: height
+- `x (145) [150]`: width
+- `= (22)`: top margin height
+- `// 35 [115]`: writing mirror height
+- `// -`: missing bottom margin
+- `x 10`: internal margin width
+- `// 115 //`: writing mirror width
+- `20`: external margin width
+
+(2) `mm 336 x 240 = 18 // 282 // 36 x 25 / 4 // 174 // 4 / 33`
+
+- `mm`: unit
+- `336`: height
+- `x 240`: width
+- `= 18`: top margin height
+- `// 282 //`: writing mirror height
+- `36`: bottom margin height
+- `x 25`: internal margin width
+- `4`: column for initials width
+- `// 174 //`: writing mirror width
+- `4`: column for initials width
+- `/ 33`: external margin width
+
+(3) `mm (245) x (162) = (10) // 206 // (29) x (21) // 114 // (27)`
+
+- `mm`: unit
+- `245`: height
+- `x 162`: width
+- `= (10)`: top margin height
+- `// 206 //`: writing mirror height
+- `(29)`: bottom margin height
+- `x (21)`: internal margin width
+- `// 114 //`: writing mirror width
+- `(27)`: external margin width
+
+>Note that the above examples were fixed as they seem to have typos in the original document (see nr.2 and 3).
+
 ## Item - Container
 
 This item represents the container of a fragment, whether it's the current one or the original one (which might or not be existing: as for this property, we can ⚠️ decide whether it must be explicitly defined or it just descends from the instance structure, e.g. an existing container has shelfmarks, while a non-existing one has not).
