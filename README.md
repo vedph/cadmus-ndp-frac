@@ -11,6 +11,52 @@ In what follows:
 - ⭐ marks a new part. The star is used once, even when that part is then reused in other items. If a part marked with a star has a link to documentation, this means that I have already implemented it as I could do this in advance for generic parts. All the other parts are still to be implemented.
 - ⚠️ marks an area where the model must still be defined with a discussion.
 
+```mermaid
+graph LR;
+FRAGMENT --> fr_identity
+fr_identity --> metadata
+fr_identity --> cod_shelfmarks
+fr_identity --> pin-links
+FRAGMENT --> fr_history
+fr_history --> chronotopes
+fr_history --> events
+fr_history --> note
+fr_history --> ext-bibliography
+FRAGMENT --> fr_support
+fr_support --> cod-fr-support
+fr_support --> decorated-counts
+fr_support --> measurements
+fr_support --> states
+fr_support --> cod-fr-rulings
+FRAGMENT --> fr_content
+fr_content --> cod_contents
+fr_content --> cod_hands
+fr_content --> cod_edits
+fr_content --> cod-fr-quire-labels
+fr_content --> cod_decorations?
+```
+
+```mermaid
+graph LR;
+CONTAINER --> cn_identity
+cn_identity --> metadata
+cn_identity --> cod_shelfmarks
+CONTAINER --> cn_history
+cn_history --> chronotopes
+cn_history --> events
+cn_history --> note
+cn_history --> ext-bibliography
+CONTAINER --> cn_support
+cn_support --> measurements
+cn_support --> decorated-counts
+cn_support --> states
+CONTAINER --> cn_content
+cn_content --> cod_sheet-labels
+cn_content --> cod_contents
+cn_content --> cod_hands
+cn_content --> cod_decorations?
+```
+
 ## New Parts
 
 ### CodFrQuireLabelsPart
