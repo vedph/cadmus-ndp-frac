@@ -20,7 +20,7 @@ identity --> pin-links
 FRAGMENT --> history
 history --> chronotopes
 history --> events
-history --> note
+history --> note:hist
 history --> ext-bibliography
 FRAGMENT --> support
 support --> cod-fr-support
@@ -32,7 +32,8 @@ FRAGMENT --> content
 content --> cod_contents
 content --> cod_hands
 content --> cod_edits
-content --> cod-fr-quire-labels
+content --> cod-fr-quire-labels:sig
+content --> cod-fr-quire-labels:catch
 content --> cod_decorations?
 ```
 
@@ -44,7 +45,7 @@ identity --> cod_shelfmarks
 CONTAINER --> history
 history --> chronotopes
 history --> events
-history --> note
+history --> note:hist
 history --> ext-bibliography
 CONTAINER --> support
 support --> measurements
@@ -108,7 +109,7 @@ This item represents a single fragment.
 - history:
   - 🟢 [chronotopes part](https://github.com/vedph/cadmus-general/blob/master/docs/chronotopes.md)
   - 🟢 [historical events part](https://github.com/vedph/cadmus-general/blob/master/docs/historical-events.md)
-  - 🟢 [note part](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`history`
+  - 🟢 [note part](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`hist`
   - 🟢 [external bibliography part](https://github.com/vedph/cadmus-general/blob/master/docs/ext-bibliography.md)
 
 - support:
@@ -123,7 +124,7 @@ This item represents a single fragment.
   - 📖 [codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
   - 📖 [codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`sig`: quire labels for signatures.
-  - [CodFrQuireLabelsPart](#codfrquirelabelspart):`catch`: quire labels for catchwords.
+  - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`catch`: quire labels for catchwords.
   - ⭐ decorations part: ⚠️ to be defined.
 
 >The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
@@ -139,7 +140,7 @@ This item represents the container of a fragment, whether it's the current one o
 - history:
   - 🟢 [chronotopes part](https://github.com/vedph/cadmus-general/blob/master/docs/chronotopes.md)
   - 🟢 [historical events part](https://github.com/vedph/cadmus-general/blob/master/docs/historical-events.md)
-  - 🟢 [note part](https://github.com/vedph/cadmus-general/blob/master/docs/note.md) (history)
+  - 🟢 [note part](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`hist`
   - 🟢 [external bibliography part](https://github.com/vedph/cadmus-general/blob/master/docs/ext-bibliography.md)
 
 - support:
