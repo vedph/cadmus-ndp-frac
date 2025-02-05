@@ -13,48 +13,48 @@ In what follows:
 
 ```mermaid
 graph LR;
-FRAGMENT --> fr_identity
-fr_identity --> metadata
-fr_identity --> cod_shelfmarks
-fr_identity --> pin-links
-FRAGMENT --> fr_history
-fr_history --> chronotopes
-fr_history --> events
-fr_history --> note
-fr_history --> ext-bibliography
-FRAGMENT --> fr_support
-fr_support --> cod-fr-support
-fr_support --> decorated-counts
-fr_support --> measurements
-fr_support --> states
-fr_support --> cod-fr-rulings
-FRAGMENT --> fr_content
-fr_content --> cod_contents
-fr_content --> cod_hands
-fr_content --> cod_edits
-fr_content --> cod-fr-quire-labels
-fr_content --> cod_decorations?
+FRAGMENT --> identity
+identity --> metadata
+identity --> cod_shelfmarks
+identity --> pin-links
+FRAGMENT --> history
+history --> chronotopes
+history --> events
+history --> note
+history --> ext-bibliography
+FRAGMENT --> support
+support --> cod-fr-support
+support --> decorated-counts
+support --> measurements
+support --> states
+support --> cod-fr-rulings
+FRAGMENT --> content
+content --> cod_contents
+content --> cod_hands
+content --> cod_edits
+content --> cod-fr-quire-labels
+content --> cod_decorations?
 ```
 
 ```mermaid
 graph LR;
-CONTAINER --> cn_identity
-cn_identity --> metadata
-cn_identity --> cod_shelfmarks
-CONTAINER --> cn_history
-cn_history --> chronotopes
-cn_history --> events
-cn_history --> note
-cn_history --> ext-bibliography
-CONTAINER --> cn_support
-cn_support --> measurements
-cn_support --> decorated-counts
-cn_support --> states
-CONTAINER --> cn_content
-cn_content --> cod_sheet-labels
-cn_content --> cod_contents
-cn_content --> cod_hands
-cn_content --> cod_decorations?
+CONTAINER --> identity
+identity --> metadata
+identity --> cod_shelfmarks
+CONTAINER --> history
+history --> chronotopes
+history --> events
+history --> note
+history --> ext-bibliography
+CONTAINER --> support
+support --> measurements
+support --> decorated-counts
+support --> states
+CONTAINER --> content
+content --> cod_sheet-labels
+content --> cod_contents
+content --> cod_hands
+content --> cod_decorations?
 ```
 
 ## New Parts
