@@ -3,6 +3,7 @@
 - [Cadmus models reference](https://myrmex.github.io/overview/cadmus/dev/models/)
 - [Cadmus bricks playground](https://cadmus-bricks.fusi-soft.com/)
 - [Cadmus NDP Books](https://github.com/vedph/cadmus-ndp-books)
+- [Cadmus NDP Drawings](https://github.com/vedph/cadmus-ndp-drawings)
 
 In what follows:
 
