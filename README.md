@@ -119,6 +119,7 @@ This item represents a single fragment.
   - 🟢 [physical measurements part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md)
   - 🟢 [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
   - ⭐ [CodFrRulingsPart](#codfrrulingspart)
+  - [links part](https://github.com/vedph/cadmus-general/blob/master/docs/fr.pin-links.md): links to the original/current container (a ms item). An _item flag_ will mark a reconstructed manuscript.
 
 - content:
   - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md). A fragment typically includes a few verses, with optional lacunae in it. To represent this we can still use the codicology contents part, adding a content for each content covered by the fragment. So for instance if a fragment contains If.1,20-23 and If.1,25 (i.e. If 1.20-25 where 24 is missing) we just add 2 content entries for these two contents (optionally we can also use the tag to group these two contents together). Like any content entry each has its incipit, explicit etc. ⚠️ Determine if other properties are required.
@@ -130,9 +131,7 @@ This item represents a single fragment.
 
 >The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
 
-## Item - Container
-
-This item represents the container of a fragment, whether it's the current one or the original one (which might or not be existing: as for this property, we can ⚠️ decide whether it must be explicitly defined or it just descends from the instance structure, e.g. an existing container has shelfmarks, while a non-existing one has not).
+The container of a fragment, whether it's the current one or the original one, is a manuscript item linked from the fragment. Originally we were thinking about these parts:
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
