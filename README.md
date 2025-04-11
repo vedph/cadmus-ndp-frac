@@ -68,11 +68,11 @@ Codicological fragments quire labels for signatures.
 - ⭐ `CodFrQuireLabelsPart`:
   - labels (`QuireLabel[]`):
     - `types` (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
-    - `text` (string)
+    - `text` (`string`)
     - `positions`\* (`string[]`, 📚 `cod-fr-quire-label-positions`: flags like margine inferiore, margine superiore, centro, angolo interno, angolo esterno, colonna A, colonna B).
-    - `hand` (string; lookup?)
-    - `ink` (free text string)
-    - `note` (free text)
+    - `hand` (`string`; lookup?)
+    - `ink` (`string`, free text)
+    - `note` (`string`, free text)
 
 ### CodFrRulingsPart
 
@@ -104,7 +104,7 @@ This item represents a single fragment.
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-  - 📖 [codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md) ❓what is this used for? If this belongs to the container, it has no use here. If instead it refers to the fragment itself, it belongs here as its ID.
+  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md) ❓what is this used for? If this belongs to the container, it has no use here. If instead it refers to the fragment itself, it belongs here as its ID.
   - 🟢 [pin links part](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md): this links the fragment to its original container and current container. The different role of the link (original vs current) is defined by the link's tag. Each link can also include an assertion.
 
 - history:
@@ -122,11 +122,11 @@ This item represents a single fragment.
 
 - content:
   - 📖 [codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md). A fragment typically includes a few verses, with optional lacunae in it. To represent this we can still use the codicology contents part, adding a content for each content covered by the fragment. So for instance if a fragment contains If.1,20-23 and If.1,25 (i.e. If 1.20-25 where 24 is missing) we just add 2 content entries for these two contents (optionally we can also use the tag to group these two contents together). Like any content entry each has its incipit, explicit etc. ⚠️ Determine if other properties are required.
-  - 📖 [codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
-  - 📖 [codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
+  - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
+  - 📖 [COD codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`sig`: quire labels for signatures.
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`catch`: quire labels for catchwords.
-  - ⭐ decorations part: ⚠️ to be defined.
+  - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
 
 >The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
 
@@ -136,7 +136,7 @@ This item represents the container of a fragment, whether it's the current one o
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-  - 📖 [codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)
+  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)
 
 - history:
   - 🟢 [chronotopes part](https://github.com/vedph/cadmus-general/blob/master/docs/chronotopes.md)
@@ -150,10 +150,10 @@ This item represents the container of a fragment, whether it's the current one o
   - 🟢 [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
 
 - content:
-  - 📖 [codicology sheet labels part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-sheet-labels.md)
-  - 📖 [codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)
-  - 📖 [codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
-  - 📖 [decorations part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md) ⚠️ to be confirmed
+  - 📖 [COD codicology sheet labels part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-sheet-labels.md)
+  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)
+  - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
+  - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
 
 ❓ TODO: this is going to merge with fr quire labels part above?:
 
