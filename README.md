@@ -5,6 +5,14 @@
 - [Cadmus NDP Books](https://github.com/vedph/cadmus-ndp-books)
 - [Cadmus NDP Drawings](https://github.com/vedph/cadmus-ndp-drawings)
 
+- [Cadmus NDP FRAC](#cadmus-ndp-frac)
+  - [New Parts](#new-parts)
+    - [CodFrQuireLabelsPart](#codfrquirelabelspart)
+    - [CodFrRulingsPart](#codfrrulingspart)
+    - [CodFrSupportPart](#codfrsupportpart)
+  - [Item - Fragment](#item---fragment)
+  - [Item - Container](#item---container)
+
 In what follows:
 
 - 🟢 marks a [general](https://vedph.github.io/cadmus-doc/models/shared.html#general) or bibliographic part.
@@ -35,7 +43,7 @@ content --> cod_hands
 content --> cod_edits
 content --> cod-fr-quire-labels:sig
 content --> cod-fr-quire-labels:catch
-content --> cod_decorations?
+content --> cod_decorations
 ```
 
 ```mermaid
@@ -56,7 +64,7 @@ CONTAINER --> content
 content --> cod_sheet-labels
 content --> cod_contents
 content --> cod_hands
-content --> cod_decorations?
+content --> cod_decorations
 ```
 
 ## New Parts
@@ -66,11 +74,11 @@ content --> cod_decorations?
 Codicological fragments quire labels for signatures.
 
 - ⭐ `CodFrQuireLabelsPart`:
-  - labels (`QuireLabel[]`):
+  - labels (`CodFrQuireLabel[]`):
     - `types` (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
     - `text` (`string`)
     - `positions`\* (`string[]`, 📚 `cod-fr-quire-label-positions`: flags like margine inferiore, margine superiore, centro, angolo interno, angolo esterno, colonna A, colonna B).
-    - `hand` (`string`; lookup?)
+    - `handId` (`string`; lookup?)
     - `ink` (`string`, free text)
     - `note` (`string`, free text)
 
@@ -79,9 +87,9 @@ Codicological fragments quire labels for signatures.
 Codicological fragment rulings.
 
 - ⭐ `CodFrRulingsPart`:
-  - rulings (`CodFrRulings[]`):
+  - rulings (`CodFrRuling[]`):
     - features (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
-    - system (`string`, 📚 `cod-fr-ruling-system`)
+    - system (`string`, 📚 `cod-fr-ruling-systems`)
     - type (`string`, 📚 `cod-fr-ruling-types`)
     - note (`string`)
 
@@ -131,7 +139,9 @@ This item represents a single fragment.
 
 >The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
 
-The container of a fragment, whether it's the current one or the original one, is a manuscript item linked from the fragment. Originally we were thinking about these parts:
+## Item - Container
+
+The container of a fragment, whether it's the current one or the original one, is a manuscript item linked from the fragment.
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
@@ -153,13 +163,3 @@ The container of a fragment, whether it's the current one or the original one, i
   - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)
   - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
   - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
-
-❓ TODO: this is going to merge with fr quire labels part above?:
-
-- ⭐ fragment container description:
-  - `material` (`string`, 📚 )
-  - `formula` (`string`, Codicology-like) if the ms is present
-  - `virtualQuires` (`VirtualQuire[]`):
-    - `sheetCount` (`short`)
-    - `ordinal` (`short`, negative or positive; negative is a reverse ordinal)
-    - `numbering` (`string`)
