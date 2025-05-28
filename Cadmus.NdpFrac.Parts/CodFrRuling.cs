@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Cadmus.NdpFrac.Parts;
 
@@ -14,7 +10,7 @@ public class CodFrRuling
     /// <summary>
     /// The ruling system. Usually from thesaurus <c>cod-fr-ruling-systems</c>.
     /// </summary>
-    public string? System { get; set; }
+    public string System { get; set; } = "";
 
     /// <summary>
     /// The features of the ruling, like "a secco", "a mina", "a inchiostro", etc.
@@ -22,5 +18,24 @@ public class CodFrRuling
     /// </summary>
     public List<string>? Features { get; set; }
 
-    // TODO
+    /// <summary>
+    /// The ruling type, usually from thesaurus <c>cod-fr-ruling-types</c>.
+    /// </summary>
+    public string? Type { get; set; }
+
+    /// <summary>
+    /// A general note about the ruling.
+    /// </summary>
+    public string? Note { get; set; }
+
+    /// <summary>
+    /// Converts this instance to a string representation.
+    /// </summary>
+    /// <returns>String.</returns>
+    public override string ToString()
+    {
+        return System +
+            (Features?.Count > 0 ? " (" + string.Join(", ", Features) + ")" : "") +
+            (Type != null ? " [" + Type + "]" : "");
+    }
 }

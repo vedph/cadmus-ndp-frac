@@ -88,9 +88,9 @@ Codicological fragment rulings.
 
 - ⭐ `CodFrRulingsPart`:
   - rulings (`CodFrRuling[]`):
-    - features (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
-    - system (`string`, 📚 `cod-fr-ruling-systems`)
+    - system\* (`string`, 📚 `cod-fr-ruling-systems`)
     - type (`string`, 📚 `cod-fr-ruling-types`)
+    - features (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
     - note (`string`)
 
 ### CodFrSupportPart
@@ -98,9 +98,9 @@ Codicological fragment rulings.
 Codicological fragment support.
 
 - ⭐ `CodFrSupportPart`:
-  - `material` (`string`, 📚 `cod-fr-support-materials`)
+  - `material`\* (`string`, 📚 `cod-fr-support-materials`)
   - `location` (`string`): a location relative to an ideal rectangular grid overlaid on top of the surface of the object the fragment belonged to. The location is expressed as a set of coordinates, see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo.
-  - `pricking` (`boolean`)
+  - `hasPricking` (`boolean`)
   - `layout` formula (`string`, ⚠️ codicology-like to be defined according to D. Bianconi, _I Codices Graeci Antiquiores tra scavo e biblioteca_, in _Greek Manuscript Cataloguing: Past, Present, and Future_, edited by P. Degni, P. Eleuteri, M. Maniaci, Turnhout, Brepols, 2018 (Bibliologia, 48), 99-135, especially 110-111).
   - `reuse` type (`string`, 📚 `cod-fr-support-reuse-types`)
   - `supposedReuse` type (`string`, 📚 `cod-fr-support-reuse-types`)
