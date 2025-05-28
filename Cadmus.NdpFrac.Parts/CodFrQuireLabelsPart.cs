@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using Cadmus.Core;
 using Fusi.Tools.Configuration;
@@ -28,23 +27,33 @@ public sealed class CodFrQuireLabelsPart : PartBase
     /// these keys: ....</returns>
     public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
     {
-        // TODO: remove the filter if not using it, or make it a singleton
-        // if using it in several components in the same library
-        // e.g. using DataPinHelper.DefaultFilter as an argument
-        DataPinBuilder builder = new(new StandardDataPinTextFilter());
+        DataPinBuilder builder = new();
 
         builder.Set("tot", Labels?.Count ?? 0, false);
+        HashSet<string> positions = [];
+        HashSet<string> types = [];
+        HashSet<string> hands = [];
 
         if (Labels?.Count > 0)
         {
             foreach (CodFrQuireLabel label in Labels)
             {
-                // TODO: add values or increase counts like:
-                // id unique values if not null:
-                // builder.AddValue("id", entry.Id);
-                // type-X-count counts if not null, unfiltered:
-                // builder.Increase(entry.Type, false, "type-");
+                // positions
+                if (label.Positions.Count > 0)
+                    positions.UnionWith(label.Positions);
+
+                // types
+                if (label.Types?.Count > 0)
+                    types.UnionWith(label.Types);
+
+                // hand-id
+                if (!string.IsNullOrEmpty(label.HandId))
+                    hands.Add(label.HandId);
             }
+
+            builder.AddValues("position", positions);
+            builder.AddValues("type", types);
+            builder.AddValues("hand-id", hands);
         }
 
         return builder.Build(this);
@@ -58,10 +67,21 @@ public sealed class CodFrQuireLabelsPart : PartBase
     {
         return new List<DataPinDefinition>(
         [
-            // TODO: add pins definitions...
             new DataPinDefinition(DataPinValueType.Integer,
                "tot-count",
-               "The total count of entries.")
+               "The total count of entries."),
+            new DataPinDefinition(DataPinValueType.String,
+                "position",
+                "The label position(s).",
+                "M"),
+            new DataPinDefinition(DataPinValueType.String,
+                "type",
+                "The label type(s).",
+                "M"),
+            new DataPinDefinition(DataPinValueType.String,
+                "hand-id",
+                "The hand ID(s).",
+                "M")
         ]);
     }
 
