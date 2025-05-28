@@ -21,7 +21,7 @@ public sealed class CodFrSupportPart : PartBase
     /// <summary>
     /// A location relative to an ideal rectangular grid overlaid on top of the
     /// surface of the object the fragment belonged to. The location is expressed
-    /// as a set of coordinates,
+    /// as a set of coordinates, like A1, B2, C3, etc.,
     /// see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo
     /// in the UI.
     /// </summary>
@@ -65,7 +65,8 @@ public sealed class CodFrSupportPart : PartBase
         DataPinBuilder builder = new();
 
         // material
-        builder.AddValue("material", Material);
+        if (!string.IsNullOrEmpty(Material))
+            builder.AddValue("material", Material);
 
         // location
         if (!string.IsNullOrEmpty(Location))

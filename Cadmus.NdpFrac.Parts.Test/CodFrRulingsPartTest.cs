@@ -1,10 +1,7 @@
 ﻿using Cadmus.Core;
-using Cadmus.NdpFrac.Parts.Test;
 using Cadmus.Seed.NdpFrac.Parts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Xunit;
 
 namespace Cadmus.NdpFrac.Parts.Test;
 
