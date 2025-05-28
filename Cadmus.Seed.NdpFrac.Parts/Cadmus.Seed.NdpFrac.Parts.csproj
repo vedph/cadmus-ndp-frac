@@ -20,6 +20,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Bogus" Version="35.6.3" />
+	  <PackageReference Include="Cadmus.Seed" Version="8.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\Cadmus.NdpFrac.Parts\Cadmus.NdpFrac.Parts.csproj" />
 	</ItemGroup>
 
