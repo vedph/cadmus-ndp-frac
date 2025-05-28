@@ -87,17 +87,38 @@ public sealed class CodFrRulingsPartTest
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
 
-        Assert.Equal(5, pins.Count);
+        Assert.Equal(7, pins.Count);
 
         DataPin? pin = pins.Find(p => p.Name == "tot-count");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
         Assert.Equal("3", pin!.Value);
 
-        // TODO: assert counts and values e.g.:
-        // pin = pins.Find(p => p.Name == "pos-bottom-count");
-        // Assert.NotNull(pin);
-        // TestHelper.AssertPinIds(part, pin!);
-        // Assert.Equal("2", pin.Value);
+        // system
+        pin = pins.Find(p => p.Name == "system" && p.Value == "latn");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        pin = pins.Find(p => p.Name == "system" && p.Value == "grek");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // type
+        pin = pins.Find(p => p.Name == "type" && p.Value == "type1");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        pin = pins.Find(p => p.Name == "type" && p.Value == "type2");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        // feature
+        pin = pins.Find(p => p.Name == "feature" && p.Value == "dry");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
+
+        pin = pins.Find(p => p.Name == "feature" && p.Value == "lead");
+        Assert.NotNull(pin);
+        TestHelper.AssertPinIds(part, pin!);
     }
 }

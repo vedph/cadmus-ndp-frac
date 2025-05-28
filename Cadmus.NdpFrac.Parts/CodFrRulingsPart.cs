@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Cadmus.Core;
+﻿using Cadmus.Core;
 using Fusi.Tools.Configuration;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Cadmus.NdpFrac.Parts;
 
@@ -29,6 +30,9 @@ public sealed class CodFrRulingsPart : PartBase
         DataPinBuilder builder = new();
 
         builder.Set("tot", Rulings?.Count ?? 0, false);
+        HashSet<string> systems = [];
+        HashSet<string> types = [];
+        HashSet<string> features = [];
 
         if (Rulings?.Count > 0)
         {
@@ -36,16 +40,20 @@ public sealed class CodFrRulingsPart : PartBase
             {
                 // system
                 if (!string.IsNullOrEmpty(ruling.System))
-                    builder.AddValue("system", ruling.System);
+                    systems.Add(ruling.System);
 
                 // type
                 if (!string.IsNullOrEmpty(ruling.Type))
-                    builder.AddValue("type", ruling.Type);
+                    types.Add(ruling.Type);
 
                 // features
                 if (ruling.Features?.Count > 0)
-                    builder.AddValues("feature", ruling.Features);
+                    features.UnionWith(ruling.Features);
             }
+
+            builder.AddValues("system", systems);
+            builder.AddValues("type", types);
+            builder.AddValues("feature", features);
         }
 
         return builder.Build(this);
@@ -64,15 +72,15 @@ public sealed class CodFrRulingsPart : PartBase
                "The total count of entries."),
             new DataPinDefinition(DataPinValueType.String,
                "system",
-               "The ruling systems.",
+               "The ruling system(s).",
                "M"),
             new DataPinDefinition(DataPinValueType.String,
                "type",
-               "The ruling types.",
+               "The ruling type(s).",
                "M"),
             new DataPinDefinition(DataPinValueType.String,
                "feature",
-               "The ruling features.",
+               "The ruling feature(s).",
                "M")
         ]);
     }
