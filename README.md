@@ -44,27 +44,7 @@ content --> cod_edits
 content --> cod-fr-quire-labels:sig
 content --> cod-fr-quire-labels:catch
 content --> cod_decorations
-```
-
-```mermaid
-graph LR;
-CONTAINER --> identity
-identity --> metadata
-identity --> cod_shelfmarks
-CONTAINER --> history
-history --> chronotopes
-history --> events
-history --> note:hist
-CONTAINER --> support
-support --> measurements
-support --> decorated-counts
-support --> states
-CONTAINER --> content
-content --> cod_sheet-labels
-content --> cod_contents
-content --> cod_hands
-content --> cod_decorations
-CONTAINER --> references
+FRAGMENT --> references
 references --> ext-bibliography
 ```
 
@@ -140,30 +120,7 @@ This item represents a single fragment.
 
 >The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
 
-## Item - Container
-
-The container of a fragment, whether it's the current one or the original one, is a manuscript item linked from the fragment.
-
-- identity:
-  - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)\*
-
-- history:
-  - 🟢 [chronotopes part](https://github.com/vedph/cadmus-general/blob/master/docs/chronotopes.md)
-  - 🟢 [historical events part](https://github.com/vedph/cadmus-general/blob/master/docs/historical-events.md)
-  - 🟢 [note part](https://github.com/vedph/cadmus-general/blob/master/docs/note.md):`hist`
-  - 🟢 [external bibliography part](https://github.com/vedph/cadmus-general/blob/master/docs/ext-bibliography.md)
-
-- support:
-  - 🟢 [physical measurements part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md)
-  - 🟢 [decorated counts part](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)
-  - 🟢 [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
-
-- content:
-  - 📖 [COD codicology sheet labels part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-sheet-labels.md)
-  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)\*
-  - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
-  - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
+>Fragments are usually contained in manuscripts, so fragments references will target them in the codicological section of the database. 
 
 ## History
 
