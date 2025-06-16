@@ -19,7 +19,7 @@ public class CodFrQuireLabel
     /// Label types like Latin alphabet, Greek alphabet, Arabic digits, etc.)
     /// Usually from thesaurus <c>cod-fr-quire-label-types</c>.
     /// </summary>
-    public List<string>? Types { get; set; }
+    public List<string> Types { get; set; } = [];
 
     /// <summary>
     /// The label's text.

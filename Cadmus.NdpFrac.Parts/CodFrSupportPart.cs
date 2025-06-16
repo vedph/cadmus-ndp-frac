@@ -25,7 +25,7 @@ public sealed class CodFrSupportPart : PartBase
     /// see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo
     /// in the UI.
     /// </summary>
-    public string? Location { get; set; }
+    public string Location { get; set; } = "";
 
     /// <summary>
     /// True if the support has a pricking, false if not.
@@ -35,7 +35,7 @@ public sealed class CodFrSupportPart : PartBase
     /// <summary>
     /// The layout formula.
     /// </summary>
-    public string? Layout { get; set; }
+    public string Layout { get; set; } = "";
 
     /// <summary>
     /// The reuse type, usually from thesaurus <c>cod-fr-support-reuse-types</c>.
@@ -51,7 +51,7 @@ public sealed class CodFrSupportPart : PartBase
     /// <summary>
     /// The preservation place, usually from thesaurus <c>cod-fr-support-places</c>.
     /// </summary>
-    public string? PreservationPlace { get; set; }
+    public string PreservationPlace { get; set; } = "";
 
     /// <summary>
     /// Get all the key=value pairs (pins) exposed by the implementor.

@@ -75,7 +75,7 @@ Codicological fragments quire labels for signatures.
 
 - ⭐ `CodFrQuireLabelsPart`:
   - labels (`CodFrQuireLabel[]`):
-    - `types` (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
+    - `types`\* (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
     - `text` (`string`)
     - `positions`\* (`string[]`, 📚 `cod-fr-quire-label-positions`: flags like margine inferiore, margine superiore, centro, angolo interno, angolo esterno, colonna A, colonna B).
     - `handId` (`string`; lookup?)
@@ -88,9 +88,9 @@ Codicological fragment rulings.
 
 - ⭐ `CodFrRulingsPart`:
   - rulings (`CodFrRuling[]`):
-    - system\* (`string`, 📚 `cod-fr-ruling-systems`)
+    - system (`string`, 📚 `cod-fr-ruling-systems`)
     - type (`string`, 📚 `cod-fr-ruling-types`)
-    - features (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
+    - features\* (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
     - note (`string`)
 
 ### CodFrSupportPart
@@ -99,12 +99,12 @@ Codicological fragment support.
 
 - ⭐ `CodFrSupportPart`:
   - `material`\* (`string`, 📚 `cod-fr-support-materials`)
-  - `location` (`string`): a location relative to an ideal rectangular grid overlaid on top of the surface of the object the fragment belonged to. The location is expressed as a set of coordinates, see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo.
+  - `location`\* (`string`): a location relative to an ideal rectangular grid overlaid on top of the surface of the object the fragment belonged to. The location is expressed as a set of coordinates, see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo.
   - `hasPricking` (`boolean`)
-  - `layout` formula (`string`, ⚠️ codicology-like to be defined according to D. Bianconi, _I Codices Graeci Antiquiores tra scavo e biblioteca_, in _Greek Manuscript Cataloguing: Past, Present, and Future_, edited by P. Degni, P. Eleuteri, M. Maniaci, Turnhout, Brepols, 2018 (Bibliologia, 48), 99-135, especially 110-111).
+  - `layout`\* formula (`string`, ⚠️ codicology-like to be defined according to D. Bianconi, _I Codices Graeci Antiquiores tra scavo e biblioteca_, in _Greek Manuscript Cataloguing: Past, Present, and Future_, edited by P. Degni, P. Eleuteri, M. Maniaci, Turnhout, Brepols, 2018 (Bibliologia, 48), 99-135, especially 110-111).
   - `reuse` type (`string`, 📚 `cod-fr-support-reuse-types`)
   - `supposedReuse` type (`string`, 📚 `cod-fr-support-reuse-types`)
-  - `preservationPlace` (`string`, 📚 `cod-fr-support-places`)
+  - `preservationPlace`\* (`string`, 📚 `cod-fr-support-places`)
 
 ## Item - Fragment
 
@@ -112,7 +112,7 @@ This item represents a single fragment.
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md) ❓what is this used for? If this belongs to the container, it has no use here. If instead it refers to the fragment itself, it belongs here as its ID.
+  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)\*: either an existing shelfmark ID for the fragment, or a one created for it if the fragment has none (e.g.` Vat. lat. 13501 Fr.A` for a fragment in a manuscript with shelfmark `Vat. lat. 13501`).
   - 🟢 [pin links part](https://github.com/vedph/cadmus-general/blob/master/docs/pin-links.md): this links the fragment to its original container and current container. The different role of the link (original vs current) is defined by the link's tag. Each link can also include an assertion.
 
 - history:
@@ -122,16 +122,16 @@ This item represents a single fragment.
   - 🟢 [external bibliography part](https://github.com/vedph/cadmus-general/blob/master/docs/ext-bibliography.md)
 
 - support:
-  - ⭐ [CodFrSupportPart](#codfrsupportpart)
+  - ⭐ [CodFrSupportPart](#codfrsupportpart)\*
   - 🟢 [decorated counts part](https://github.com/vedph/cadmus-general/blob/master/docs/decorated-counts.md)
   - 🟢 [physical measurements part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-measurements.md)
   - 🟢 [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
-  - ⭐ [CodFrRulingsPart](#codfrrulingspart)
+  - ⭐ [CodFrRulingsPart](#codfrrulingspart)\*
   - [links part](https://github.com/vedph/cadmus-general/blob/master/docs/fr.pin-links.md): links to the original/current container (a ms item). An _item flag_ will mark a reconstructed manuscript.
 
 - content:
-  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md). A fragment typically includes a few verses, with optional lacunae in it. To represent this we can still use the codicology contents part, adding a content for each content covered by the fragment. So for instance if a fragment contains If.1,20-23 and If.1,25 (i.e. If 1.20-25 where 24 is missing) we just add 2 content entries for these two contents (optionally we can also use the tag to group these two contents together). Like any content entry each has its incipit, explicit etc. ⚠️ Determine if other properties are required.
-  - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
+  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)\*. A fragment typically includes a few verses, with optional lacunae in it. To represent this we can still use the codicology contents part, adding a content for each content covered by the fragment. So for instance if a fragment contains If.1,20-23 and If.1,25 (i.e. If 1.20-25 where 24 is missing) we just add 2 content entries for these two contents (optionally we can also use the tag to group these two contents together). Like any content entry each has its incipit, explicit etc. ⚠️ Determine if other properties are required.
+  - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)\*
   - 📖 [COD codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`sig`: quire labels for signatures.
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`catch`: quire labels for catchwords.
@@ -145,7 +145,7 @@ The container of a fragment, whether it's the current one or the original one, i
 
 - identity:
   - 🟢 [metadata part](https://github.com/vedph/cadmus-general/blob/master/docs/metadata.md)
-  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)
+  - 📖 [COD codicology shelfmarks part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-shelfmarks.md)\*
 
 - history:
   - 🟢 [chronotopes part](https://github.com/vedph/cadmus-general/blob/master/docs/chronotopes.md)
@@ -160,6 +160,10 @@ The container of a fragment, whether it's the current one or the original one, i
 
 - content:
   - 📖 [COD codicology sheet labels part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-sheet-labels.md)
-  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)
+  - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)\*
   - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)
   - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
+
+## History
+
+- 2025-06-16: minor refinements in models.
