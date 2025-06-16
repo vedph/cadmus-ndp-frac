@@ -55,7 +55,6 @@ CONTAINER --> history
 history --> chronotopes
 history --> events
 history --> note:hist
-history --> ext-bibliography
 CONTAINER --> support
 support --> measurements
 support --> decorated-counts
@@ -65,6 +64,8 @@ content --> cod_sheet-labels
 content --> cod_contents
 content --> cod_hands
 content --> cod_decorations
+CONTAINER --> references
+references --> ext-bibliography
 ```
 
 ## New Parts
