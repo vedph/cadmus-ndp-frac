@@ -1,4 +1,5 @@
 ﻿using Cadmus.Core;
+using Cadmus.Refs.Bricks;
 using Cadmus.Seed.NdpFrac.Parts;
 using System;
 using System.Collections.Generic;
@@ -80,7 +81,13 @@ public sealed class CodFrQuireLabelsPartTest
             {
                 Positions = (n & 1) == 1 ? ["mrg-top"] : ["mrg-bottom"],
                 Types = ["latn"],
-                HandId = "hand-" + n,
+                HandId = new AssertedCompositeId
+                {
+                    Target = new()
+                    {
+                        Gid = $"hand-{n}",
+                    }
+                }
             };
             part.Labels.Add(label);
         }

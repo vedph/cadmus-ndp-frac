@@ -59,7 +59,7 @@ Codicological fragments quire labels for signatures.
     - `types`\* (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
     - `text` (`string`)
     - `positions`\* (`string[]`, 📚 `cod-fr-quire-label-positions`: flags like margine inferiore, margine superiore, centro, angolo interno, angolo esterno, colonna A, colonna B).
-    - `handId` (`string`; lookup?)
+    - `handId` ([AssertedCompositeId](https://github.com/vedph/cadmus-bricks-shell-v3/blob/master/projects/myrmidon/cadmus-refs-asserted-ids/README.md#asserted-composite-id))
     - `ink` (`string`, free text)
     - `note` (`string`, free text)
 
@@ -68,11 +68,11 @@ Codicological fragments quire labels for signatures.
 Codicological fragment rulings.
 
 - ⭐ `CodFrRulingsPart`:
-  - rulings (`CodFrRuling[]`):
-    - system (`string`, 📚 `cod-fr-ruling-systems`)
-    - type (`string`, 📚 `cod-fr-ruling-types`)
-    - features\* (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
-    - note (`string`)
+  - `rulings` (`CodFrRuling[]`):
+    - `system` (`string`, 📚 `cod-fr-ruling-systems`)
+    - `type` (`string`, 📚 `cod-fr-ruling-types`)
+    - `features`\* (`string[]` 📚 `cod-fr-ruling-features`, flags like a secco, a mina, a inchiostro, a colore, piegatura, altro, non individuabile).
+    - `note` (`string`)
 
 ### CodFrSupportPart
 
@@ -123,5 +123,11 @@ This item represents a single fragment.
 >Fragments are usually contained in manuscripts, so fragments references will target them in the codicological section of the database. 
 
 ## History
+
+### 0.0.3
+
+- 2025-06-21: use `AssertedCompositeId` for `handId` in `CodFrQuireLabelsPart`.
+
+### 0.0.2
 
 - 2025-06-16: minor refinements in models.

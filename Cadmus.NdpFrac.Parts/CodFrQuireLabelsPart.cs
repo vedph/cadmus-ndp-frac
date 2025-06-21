@@ -47,8 +47,8 @@ public sealed class CodFrQuireLabelsPart : PartBase
                     types.UnionWith(label.Types);
 
                 // hand-id
-                if (!string.IsNullOrEmpty(label.HandId))
-                    hands.Add(label.HandId);
+                if (label.HandId?.Target?.Gid != null)
+                    hands.Add(label.HandId.Target.Gid);
             }
 
             builder.AddValues("position", positions);

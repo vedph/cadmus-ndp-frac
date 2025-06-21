@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Cadmus.Refs.Bricks;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Cadmus.NdpFrac.Parts;
@@ -29,7 +30,7 @@ public class CodFrQuireLabel
     /// <summary>
     /// The hand's ID.
     /// </summary>
-    public string? HandId { get; set; }
+    public AssertedCompositeId? HandId { get; set; }
 
     /// <summary>
     /// Notes about the label's ink.
