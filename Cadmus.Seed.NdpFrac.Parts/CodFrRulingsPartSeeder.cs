@@ -24,8 +24,10 @@ public sealed class CodFrRulingsPartSeeder : PartSeederBase
             CodFrRuling ruling = new Faker<CodFrRuling>()
                 .RuleFor(r => r.System, f => f.PickRandom("latn", "grek"))
                 // TODO use thesaurus
-                .RuleFor(r => r.Type, f => f.PickRandom("type1", "type2"))
+                .RuleFor(r => r.Type, f => f.PickRandom("t1", "t2"))
                 .RuleFor(r => r.Features, f => [f.PickRandom("drypoint", "plummet")])
+                .RuleFor(r => r.Note,
+                    f => f.Random.Bool(0.25f) ? f.Lorem.Sentence() : null)
                 .Generate();
             rulings.Add(ruling);
         }

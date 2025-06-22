@@ -124,6 +124,8 @@ This item represents a single fragment.
 
 ## History
 
+- 2025-06-22: more data and thesauri in seeders.
+
 ### 0.0.3
 
 - 2025-06-21: use `AssertedCompositeId` for `handId` in `CodFrQuireLabelsPart`.

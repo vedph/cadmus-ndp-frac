@@ -7,7 +7,7 @@ using System;
 namespace Cadmus.Seed.NdpFrac.Parts;
 
 /// <summary>
-/// Seeder for <see cref="__NAME__Part"/>.
+/// Seeder for <see cref="CodFrSupportPart"/>.
 /// Tag: <c>seed.it.vedph.ndp.fr-support</c>.
 /// </summary>
 /// <seealso cref="PartSeederBase" />
@@ -32,6 +32,9 @@ public sealed class CodFrSupportPartSeeder : PartSeederBase
            .RuleFor(p => p.Material, f => f.PickRandom("paper", "parchment"))
            .RuleFor(p => p.Location, f => f.PickRandom("A1", "B2"))
            .RuleFor(p => p.HasPricking, f => f.Random.Bool(0.5f))
+           .RuleFor(p => p.Reuse, f => f.Random.Bool(0.5f)
+                ? f.PickRandom("cover", "flyleave") : null)
+           .RuleFor(p => p.PreservationPlace, f => f.Address.City())
            .Generate();
         SetPartMetadata(part, roleId, item);
 

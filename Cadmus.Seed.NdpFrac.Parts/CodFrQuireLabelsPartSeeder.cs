@@ -23,9 +23,9 @@ public sealed class CodFrQuireLabelsPartSeeder : PartSeederBase
         {
             CodFrQuireLabel label = new Faker<CodFrQuireLabel>()
                 .RuleFor(l => l.Positions, f => [
-                    f.PickRandom("mrg-top", "mrg-bottom")])
+                    f.PickRandom("margin-top", "margin-bottom")])
                 .RuleFor(l => l.Types, f =>
-                    [f.PickRandom("latn", "grek")])
+                    [f.PickRandom("latn", "n-grek")])
                 .RuleFor(l => l.Text, f => f.Lorem.Word())
                 .RuleFor(l => l.Ink, f => f.Lorem.Sentence())
                 .RuleFor(l => l.Note, f =>
