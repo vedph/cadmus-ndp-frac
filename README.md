@@ -40,6 +40,7 @@ content --> cod_contents
 content --> cod_hands
 content --> cod_edits
 content --> cod-fr-rulings
+content --> cod-fr-quire-labels
 content --> cod-fr-quire-labels:sig
 content --> cod-fr-quire-labels:catch
 content --> cod_decorations
