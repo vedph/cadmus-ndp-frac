@@ -30,7 +30,6 @@ FRAGMENT --> history
 history --> chronotopes
 history --> events
 history --> note:hist
-history --> ext-bibliography
 FRAGMENT --> material
 material --> cod-fr-support
 material --> decorated-counts
