@@ -64,7 +64,7 @@ public sealed class CodFrSupportPartTest
         part.Material = "parchment";
         part.Location = "A1";
         part.HasPricking = true;
-        part.PreservationPlace = "BAV";
+        part.Container = "BAV";
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
         Assert.Equal(4, pins.Count);
@@ -84,8 +84,8 @@ public sealed class CodFrSupportPartTest
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
 
-        // preservation-place
-        pin = pins.Find(p => p.Name == "preservation-place" && p.Value == "BAV");
+        // container
+        pin = pins.Find(p => p.Name == "container" && p.Value == "BAV");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
     }

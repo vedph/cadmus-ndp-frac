@@ -34,7 +34,7 @@ public sealed class CodFrSupportPartSeeder : PartSeederBase
            .RuleFor(p => p.HasPricking, f => f.Random.Bool(0.5f))
            .RuleFor(p => p.Reuse, f => f.Random.Bool(0.5f)
                 ? f.PickRandom("cover", "flyleave") : null)
-           .RuleFor(p => p.PreservationPlace, f => f.Address.City())
+           .RuleFor(p => p.Container, f => f.PickRandom("envelope", "host-codex"))
            .Generate();
         SetPartMetadata(part, roleId, item);
 

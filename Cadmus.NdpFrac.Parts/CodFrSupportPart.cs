@@ -49,9 +49,10 @@ public sealed class CodFrSupportPart : PartBase
     public string? SupposedReuse { get; set; }
 
     /// <summary>
-    /// The preservation place, usually from thesaurus <c>cod-fr-support-places</c>.
+    /// The preservation container, usually from thesaurus
+    /// <c>cod-fr-support-containers</c>.
     /// </summary>
-    public string PreservationPlace { get; set; } = "";
+    public string Container { get; set; } = "";
 
     /// <summary>
     /// Get all the key=value pairs (pins) exposed by the implementor.
@@ -84,9 +85,9 @@ public sealed class CodFrSupportPart : PartBase
         if (!string.IsNullOrEmpty(Reuse))
             builder.AddValue("reuse", Reuse);
 
-        // preservation place
-        if (!string.IsNullOrEmpty(PreservationPlace))
-            builder.AddValue("preservation-place", PreservationPlace);
+        // container
+        if (!string.IsNullOrEmpty(Container))
+            builder.AddValue("container", Container);
 
         return builder.Build(this);
     }
@@ -115,8 +116,8 @@ public sealed class CodFrSupportPart : PartBase
                "reuse",
                "The reuse type."),
             new DataPinDefinition(DataPinValueType.String,
-               "preservation-place",
-               "The preservation place of the fragment support."),
+               "container",
+               "The preservation container of the fragment support."),
         ]);
     }
 
