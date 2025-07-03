@@ -7,11 +7,14 @@
 
 - [Cadmus NDP FRAC](#cadmus-ndp-frac)
   - [New Parts](#new-parts)
+    - [CodFrLayoutPart](#codfrlayoutpart)
     - [CodFrQuireLabelsPart](#codfrquirelabelspart)
     - [CodFrRulingsPart](#codfrrulingspart)
     - [CodFrSupportPart](#codfrsupportpart)
   - [Item - Fragment](#item---fragment)
-  - [Item - Container](#item---container)
+  - [History](#history)
+    - [0.0.3](#003)
+    - [0.0.2](#002)
 
 In what follows:
 
@@ -31,7 +34,7 @@ history --> chronotopes
 history --> events
 history --> note:hist
 FRAGMENT --> material
-material --> cod-fr-support
+material --> cod_fr-support
 material --> decorated-counts
 material --> measurements
 material --> states
@@ -39,16 +42,29 @@ FRAGMENT --> content
 content --> cod_contents
 content --> cod_hands
 content --> cod_edits
-content --> cod-fr-rulings
-content --> cod-fr-quire-labels
-content --> cod-fr-quire-labels:sig
-content --> cod-fr-quire-labels:catch
+content --> cod_fr-layout
+content --> cod_fr-rulings
+content --> cod_fr-quire-labels
+content --> cod_fr-quire-labels:sig
+content --> cod_fr-quire-labels:catch
 content --> cod_decorations
 FRAGMENT --> references
 references --> ext-bibliography
 ```
 
 ## New Parts
+
+### CodFrLayoutPart
+
+The layout the codicological fragment was part of.
+
+- ⭐ `CodFrLayoutPart`:
+  - `formula`\* (`string`): the layout formula. Usually this follows [Bianconi-Orsini](https://github.com/vedph/cod-layout-view?tab=readme-ov-file#bianconi-orsini).
+  - `dimensions` (`PhysicalDimension[]`): dimensions of any measurable elements in the layout, including those automatically derived from the layout formula.
+  - `pricking`\* (`string`, 📚 `cod-fr-layout-prickings`): the pricking type (including no pricking), usually from thesaurus.
+  - `columnCount`\* (`int`): the columns count, when it can be determined. Otherwise it is 0.
+  - `counts` (`DecoratedCount[]`): any type of countable elements in the layout with their value.
+  - `note` (`string`): free text note.
 
 ### CodFrQuireLabelsPart
 
@@ -109,6 +125,7 @@ This item represents a single fragment.
   - 🟢 [physical states part](https://github.com/vedph/cadmus-general/blob/master/docs/physical-states.md)
 
 - content:
+  - ⭐ [CodFrLayoutPart](#codfrlayoutpart)
   - 📖 [COD codicology contents part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-contents.md)\*. A fragment typically includes a few verses, with optional lacunae in it. To represent this we can still use the codicology contents part, adding a content for each content covered by the fragment. So for instance if a fragment contains If.1,20-23 and If.1,25 (i.e. If 1.20-25 where 24 is missing) we just add 2 content entries for these two contents (optionally we can also use the tag to group these two contents together). Like any content entry each has its incipit, explicit etc. ⚠️ Determine if other properties are required.
   - 📖 [COD codicology hands part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-hands.md)\*
   - 📖 [COD codicology edits part](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-edits.md)
@@ -118,12 +135,15 @@ This item represents a single fragment.
   - ⭐ [CodFrQuireLabelsPart](#codfrquirelabelspart):`catch`: quire labels for catchwords.
   - 📖 [COD CodDecorationsPart](https://github.com/vedph/cadmus-codicology/blob/master/docs/cod-decorations.md)
 
->The codicological formula targets size and mirror (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
+>The codicological formula targets size and text area (D. Bianconi, P. Orsini). See the [CodLayoutView](https://github.com/vedph/cod-layout-view) library for it.
 
->Fragments are usually contained in manuscripts, so fragments references will target them in the codicological section of the database. 
+Fragments are usually contained in manuscripts, so fragments references will target them in the codicological section of the database.
 
 ## History
 
+### 0.0.6
+
+- 2025-07-03: added `CodFrLayoutPart` extracting its data from `CodFrSupportPart`.
 - 2025-06-29: renamed support `preservationPlace` to `container` to properly reflect its meaning.
 - 2025-06-22: more data and thesauri in seeders.
 

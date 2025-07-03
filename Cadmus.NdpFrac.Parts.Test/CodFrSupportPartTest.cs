@@ -63,11 +63,10 @@ public sealed class CodFrSupportPartTest
         CodFrSupportPart part = GetEmptyPart();
         part.Material = "parchment";
         part.Location = "A1";
-        part.HasPricking = true;
         part.Container = "BAV";
 
         List<DataPin> pins = [.. part.GetDataPins(null)];
-        Assert.Equal(4, pins.Count);
+        Assert.Equal(3, pins.Count);
 
         // material
         DataPin? pin = pins.Find(p => p.Name == "material" && p.Value == "parchment");
@@ -76,11 +75,6 @@ public sealed class CodFrSupportPartTest
 
         // location
         pin = pins.Find(p => p.Name == "location" && p.Value == "A1");
-        Assert.NotNull(pin);
-        TestHelper.AssertPinIds(part, pin!);
-
-        // has-pricking
-        pin = pins.Find(p => p.Name == "has-pricking" && p.Value == "1");
         Assert.NotNull(pin);
         TestHelper.AssertPinIds(part, pin!);
 

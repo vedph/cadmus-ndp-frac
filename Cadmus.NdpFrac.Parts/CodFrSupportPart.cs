@@ -28,16 +28,6 @@ public sealed class CodFrSupportPart : PartBase
     public string Location { get; set; } = "";
 
     /// <summary>
-    /// True if the support has a pricking, false if not.
-    /// </summary>
-    public bool HasPricking { get; set; }
-
-    /// <summary>
-    /// The layout formula.
-    /// </summary>
-    public string Layout { get; set; } = "";
-
-    /// <summary>
     /// The reuse type, usually from thesaurus <c>cod-fr-support-reuse-types</c>.
     /// </summary>
     public string? Reuse { get; set; }
@@ -73,14 +63,6 @@ public sealed class CodFrSupportPart : PartBase
         if (!string.IsNullOrEmpty(Location))
             builder.AddValue("location", Location);
 
-        // has-pricking
-        if (HasPricking)
-            builder.AddValue("has-pricking", HasPricking);
-
-        // layout
-        if (!string.IsNullOrEmpty(Layout))
-            builder.AddValue("layout", Layout);
-
         // reuse
         if (!string.IsNullOrEmpty(Reuse))
             builder.AddValue("reuse", Reuse);
@@ -110,9 +92,6 @@ public sealed class CodFrSupportPart : PartBase
                "has-pricking",
                "True if the support has a pricking."),
             new DataPinDefinition(DataPinValueType.String,
-               "layout",
-               "The layout formula."),
-            new DataPinDefinition(DataPinValueType.String,
                "reuse",
                "The reuse type."),
             new DataPinDefinition(DataPinValueType.String,
@@ -132,8 +111,7 @@ public sealed class CodFrSupportPart : PartBase
         StringBuilder sb = new();
 
         sb.Append("[CodFrSupport]").Append(' ').Append(Material);
-        if (HasPricking) sb.Append('%');
-
+     
         if (!string.IsNullOrEmpty(Location))
             sb.Append(" (").Append(Location).Append(')');
 
