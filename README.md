@@ -141,6 +141,8 @@ Fragments are usually contained in manuscripts, so fragments references will tar
 
 ## History
 
+- 2025-07-08: fixed seeder tag.
+
 ### 0.0.6
 
 - 2025-07-03: added `CodFrLayoutPart` extracting its data from `CodFrSupportPart`.

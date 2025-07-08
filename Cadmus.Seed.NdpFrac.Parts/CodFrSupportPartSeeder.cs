@@ -8,10 +8,10 @@ namespace Cadmus.Seed.NdpFrac.Parts;
 
 /// <summary>
 /// Seeder for <see cref="CodFrSupportPart"/>.
-/// Tag: <c>seed.it.vedph.ndp.fr-support</c>.
+/// Tag: <c>seed.it.vedph.ndp.cod-fr-support</c>.
 /// </summary>
 /// <seealso cref="PartSeederBase" />
-[Tag("seed.it.vedph.ndp.fr-support")]
+[Tag("seed.it.vedph.ndp.cod-fr-support")]
 public sealed class CodFrSupportPartSeeder : PartSeederBase
 {
     /// <summary>
