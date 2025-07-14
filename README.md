@@ -141,6 +141,7 @@ Fragments are usually contained in manuscripts, so fragments references will tar
 
 ## History
 
+- 2025-07-14: updated packages.
 - 2025-07-08: fixed seeder tag.
 
 ### 0.0.6
