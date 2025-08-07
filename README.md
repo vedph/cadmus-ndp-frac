@@ -13,8 +13,6 @@
     - [CodFrSupportPart](#codfrsupportpart)
   - [Item - Fragment](#item---fragment)
   - [History](#history)
-    - [0.0.3](#003)
-    - [0.0.2](#002)
 
 In what follows:
 
@@ -140,6 +138,10 @@ This item represents a single fragment.
 Fragments are usually contained in manuscripts, so fragments references will target them in the codicological section of the database.
 
 ## History
+
+### 0.0.10
+
+- 2025-08-07: updated packages.
 
 ### 0.0.9
 
