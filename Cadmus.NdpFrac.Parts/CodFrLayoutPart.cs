@@ -42,6 +42,12 @@ public sealed class CodFrLayoutPart : PartBase
     public List<DecoratedCount> Counts { get; set; } = [];
 
     /// <summary>
+    /// A list of thesaurus-defined features of the layout. Usually from
+    /// thesaurus <c>cod-fr-layout-features</c>.
+    /// </summary>
+    public List<string>? Features { get; set; }
+
+    /// <summary>
     /// A free text note about the layout.
     /// </summary>
     public string? Note { get; set; }
