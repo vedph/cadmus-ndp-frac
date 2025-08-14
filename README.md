@@ -56,7 +56,7 @@ references --> ext-bibliography
 
 The layout the codicological fragment was part of.
 
-- ⭐ `CodFrLayoutPart`:
+- ⭐ `CodFrLayoutPart` (`it.vedph.ndp.cod-fr-layout`):
   - `formula`\* (`string`): the layout formula. Usually this follows [Bianconi-Orsini](https://github.com/vedph/cod-layout-view?tab=readme-ov-file#bianconi-orsini).
   - `dimensions` (`PhysicalDimension[]`): dimensions of any measurable elements in the layout, including those automatically derived from the layout formula.
   - `pricking`\* (`string`, 📚 `cod-fr-layout-prickings`): the pricking type (including no pricking), usually from thesaurus.
@@ -68,7 +68,7 @@ The layout the codicological fragment was part of.
 
 Codicological fragments quire labels for signatures.
 
-- ⭐ `CodFrQuireLabelsPart`:
+- ⭐ `CodFrQuireLabelsPart` (`it.vedph.ndp.cod-fr-quire-labels`):
   - labels (`CodFrQuireLabel[]`):
     - `types`\* (`string[]`, 📚 `cod-fr-quire-label-types`: flags like alfabeto latino, greco, cifre arabe, romane, decorato, altro; hidden if no such thesaurus).
     - `text` (`string`)
@@ -81,7 +81,7 @@ Codicological fragments quire labels for signatures.
 
 Codicological fragment rulings.
 
-- ⭐ `CodFrRulingsPart`:
+- ⭐ `CodFrRulingsPart` (`it.vedph.ndp.cod-fr-rulings`):
   - `rulings` (`CodFrRuling[]`):
     - `system` (`string`, 📚 `cod-fr-ruling-systems`)
     - `type` (`string`, 📚 `cod-fr-ruling-types`)
@@ -92,7 +92,7 @@ Codicological fragment rulings.
 
 Codicological fragment support.
 
-- ⭐ `CodFrSupportPart`:
+- ⭐ `CodFrSupportPart` (`it.vedph.ndp.cod-fr-support`):
   - `container`\* (`string`, 📚 `cod-fr-support-containers`, e.g. busta, codice ospite, codice fattizio, altro).
   - `material`\* (`string`, 📚 `cod-fr-support-materials`)
   - `location`\* (`string`): a location relative to an ideal rectangular grid overlaid on top of the surface of the object the fragment belonged to. The location is expressed as a set of coordinates, see <https://cadmus-bricks.fusi-soft.com/mat/physical-grid> for a demo.
