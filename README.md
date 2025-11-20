@@ -42,7 +42,7 @@ references --> ext-bibliography
 
 ## New Parts
 
-- [CodFrLayoutParts](docs/cod-fr-layout-part.md)
+- [CodFrLayoutPart](docs/cod-fr-layout-part.md)
 - [CodFrQuireLabelsPart](docs/cod-fr-quire-labels-part.md)
 - [CodFrRulingsPart](docs/cod-fr-rulings-part.md)
 - [CodFrSupportPart](docs/cod-fr-support-part.md)
