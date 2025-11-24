@@ -88,6 +88,10 @@ Fragments are usually contained in manuscripts, so fragments references will tar
 
 ## History
 
+### 1.0.0
+
+- 2025-11-24: ⚠️ upgraded to NET 10.
+
 ### 0.0.15
 
 - 2025-10-28: updated packages for seeders.
