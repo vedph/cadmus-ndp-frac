@@ -88,6 +88,10 @@ Fragments are usually contained in manuscripts, so fragments references will tar
 
 ## History
 
+### 1.0.2
+
+- 2026-02-17: updated packages.
+
 ### 1.0.1
 
 - 2026-02-01: updated packages.
